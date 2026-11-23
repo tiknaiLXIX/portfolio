@@ -226,6 +226,19 @@ function CubeRain() {
   );
 }
 
+function HeroPhoto() {
+  const [failed, setFailed] = useState(false);
+  return (
+    <div className="hero-photo">
+      {profile.photo && !failed ? (
+        <img src={profile.photo} alt={`Portrait of ${profile.name}`} onError={() => setFailed(true)} />
+      ) : (
+        <span aria-hidden="true">{profile.initials}</span>
+      )}
+    </div>
+  );
+}
+
 function Hero() {
   const typed = useTyping(profile.headlines);
   return (
@@ -234,7 +247,7 @@ function Hero() {
         <CubeRain />
       </div>
       <div className="hero-body">
-        <div className="hero-photo" aria-hidden="true">{profile.initials}</div>
+        <HeroPhoto />
         <h1 id="hero-title">{profile.name}</h1>
         <p className="hero-headline" aria-label={profile.headlines.join(', ')}>
           <span aria-hidden="true">{typed}<span className="typing-cursor">|</span></span>

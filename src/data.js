@@ -3,6 +3,7 @@
 export const profile = {
   name: 'Ian Kit Belen',
   initials: 'IB',
+  photo: 'assets/profile.jpg',
   role: 'Electrical Engineering',
   // the hero headline types through these
   headlines: ['Electrical Engineering Graduate', 'Control Systems', 'Sensor Fusion', 'Embedded & Cloud Software'],
