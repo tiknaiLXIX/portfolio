@@ -417,11 +417,11 @@ function ProjectCard({ project, onOpen }) {
       <p className="project-meta">{project.meta}</p>
       <p>{project.body}</p>
       {project.result && <p className="result"><Rich text={project.result} /></p>}
-      {project.extraImage && (
-        <button className="text-link" onClick={() => onOpen(project.extraImage)}>
-          {project.extraImage.label || 'View screenshot →'}
+      {[project.extraImage, ...(project.extraImages || [])].filter(Boolean).map((img) => (
+        <button key={img.src} className="text-link" onClick={() => onOpen(img)}>
+          {img.label || 'View screenshot →'}
         </button>
-      )}
+      ))}
       <TechList items={project.tags} />
     </article>
   );

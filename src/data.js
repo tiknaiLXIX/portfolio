@@ -162,7 +162,12 @@ export const projects = [
     category: 'Electronics',
     meta: 'EGH449 · GROUP PROJECT · 2026',
     title: 'Precision Weigh Scale Instrumentation Amplifier',
-    image: { src: 'assets/weigh.jpg', alt: 'Breadboard prototype of the weigh scale instrumentation amplifier' },
+    image: { src: 'assets/weigh-board.png', alt: 'Two-layer KiCad PCB for the weigh scale instrumentation amplifier', contain: true },
+    extraImages: [
+      { src: 'assets/weigh-pcb.png', alt: 'KiCad PCB layout with copper traces on both layers', label: 'View the PCB layout →', contain: true },
+      { src: 'assets/weigh-schematic.png', alt: 'KiCad schematic: voltage regulator, strain gauge, two-stage instrumentation amplifier, voltage reference and Arty FPGA headers', label: 'View the schematic →', contain: true },
+      { src: 'assets/weigh.jpg', alt: 'Breadboard prototype of the weigh scale instrumentation amplifier', label: 'View the breadboard prototype →' },
+    ],
     body: 'A three op-amp instrumentation amplifier conditions the 5 mV full-scale output of a TAL220 load cell into the 0–1 V XADC input of an Arty FPGA, with a gain of 1000 V/V split 100 × 10. It includes a voltage reference for single-supply LT1013 op-amps, diode input protection and an MCP1824T regulator. Verified with LTspice transient and Monte Carlo analysis, then built on a breadboard and laid out as a 2-layer KiCad PCB.',
     result: 'Measured unknown masses within **3%**, improving to **under 2%** with two-point calibration.',
     tags: ['LTspice', 'KiCad', 'Op-amps', 'FPGA XADC', 'Instrumentation'],
